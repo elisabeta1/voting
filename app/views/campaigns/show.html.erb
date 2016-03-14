@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Candidate</th>
+      <th>Scores</th>
+      <th>Not valid scores</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate[:name] %></td>
+        <td><%= candidate[:valid_count] %></td>
+        <td><%= candidate[:invalid_count] %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', campaigns_path %>
